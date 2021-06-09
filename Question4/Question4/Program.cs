@@ -33,7 +33,7 @@ namespace Question4
 
                 string unvalidatedString = Console.ReadLine();
 
-                if (!unvalidatedString.Contains('(') && !unvalidatedString.Contains(')') || unvalidatedString.Equals(""))
+                if (!unvalidatedString.Contains('(') && !unvalidatedString.Contains(')') || string.IsNullOrEmpty(unvalidatedString) )
                 {
                     Console.WriteLine("Please enter an non empty string with atleast a '(' or a ')'");
                     continue;
@@ -51,13 +51,13 @@ namespace Question4
 
            
             //for each letter in the string
-            for(int i = 0; i < myString.Length; i++)
+            foreach(char character in myString)
             {
               
-                switch (myString[i])
+                switch (character)
                 {
                     case '(':
-                        myStack.Push(myString[i]);
+                        myStack.Push(character);
                         break;
                     case ')':
                        if( myStack.Count > 0 )

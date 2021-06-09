@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\code\\Question4\\Question4\\Question4.csproj",
+      "projectUniqueName": "D:\\code\\Availity\\Question4\\Question4\\Question4.csproj",
       "projectName": "Question4",
-      "projectPath": "D:\\code\\Question4\\Question4\\Question4.csproj",
+      "projectPath": "D:\\code\\Availity\\Question4\\Question4\\Question4.csproj",
       "packagesPath": "C:\\Users\\kchoe\\.nuget\\packages\\",
-      "outputPath": "D:\\code\\Question4\\Question4\\obj\\",
+      "outputPath": "D:\\code\\Availity\\Question4\\Question4\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
