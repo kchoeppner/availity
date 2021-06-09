@@ -10,10 +10,10 @@ namespace Question6
         static void Main(string[] args)
         {
 
-            //string path = PromptUser();
+            string path = PromptUser();
 
             //for testing
-            string path = "D:/code/Question6/test.txt";
+            //string path = "D:/code/Question6/test.txt";
 
             //reads the file and creates a list of companies that holds its users
             List<Company> companyList = ReadFile(path);
@@ -106,7 +106,7 @@ namespace Question6
             }
             catch
             {
-                Console.WriteLine("could not open file");
+                Console.WriteLine("could not open file or data was not properly formatted");
                 return null;
             }
         }
