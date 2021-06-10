@@ -35,7 +35,7 @@ namespace Question4
 
                 if (!unvalidatedString.Contains('(') && !unvalidatedString.Contains(')') || string.IsNullOrEmpty(unvalidatedString) )
                 {
-                    Console.WriteLine("Please enter an non empty string with atleast a '(' or a ')'");
+                    Console.WriteLine("Please enter an non empty string with at least a '(' or a ')'");
                     continue;
                 }
                 return unvalidatedString;
@@ -48,7 +48,6 @@ namespace Question4
         {
             //create a stack
             Stack<char> myStack = new Stack<char>();
-
            
             //for each letter in the string
             foreach(char character in myString)
@@ -61,23 +60,20 @@ namespace Question4
                         break;
                     case ')':
                        if( myStack.Count > 0 )
-                        {
+                       {
                             myStack.Pop();
-                        } else
-                        {
+                       }
+                       else
+                       {
                             return false;
-                        }
+                       }
                         break;
                     default:
                         break;
                 }
             }
-
             //if myStack.Count is empty, then string is good. if not it is bad
             return myStack.Count == 0;
         }
-
-
-
     }
 }

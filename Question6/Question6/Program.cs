@@ -114,8 +114,8 @@ namespace Question6
         static void SortList(List<Company> myCompanyList)
         {
             foreach(Company company in myCompanyList)
-            {
-                company.UserList.Sort(delegate(User x, User y) 
+            { 
+                company.UserList.Sort( (User x, User y) =>
                 {
                     if (x.UserName == null && y.UserName == null) return 0;
                     else if (x.UserName == null) return -1;
