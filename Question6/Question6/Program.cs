@@ -9,11 +9,19 @@ namespace Question6
     {
         static void Main(string[] args)
         {
+            /*
+                This was written under the assumption that the CSV file would be formatted as such :
 
+                UserId, FirstName LastName, Version, InsuranceCompany
+                UserId, FirstName LastName, Version, InsuranceCompany
+                .
+                ..
+                ...
+            */
             string path = PromptUser();
 
             //for testing
-            //string path = "D:/code/Question6/test.txt";
+            //string path = "D:/code/Availity/Question6/test.txt";
 
             //reads the file and creates a list of companies that holds its users
             List<Company> companyList = ReadFile(path);
@@ -117,10 +125,11 @@ namespace Question6
             { 
                 company.UserList.Sort( (User x, User y) =>
                 {
-                    if (x.UserName == null && y.UserName == null) return 0;
-                    else if (x.UserName == null) return -1;
-                    else if (y.UserName == null) return 1;
-                    else return x.UserName.CompareTo(y.UserName);
+                    
+                    if (x.LastNameFirstName == null && y.LastNameFirstName == null) return 0;
+                    else if (x.LastNameFirstName == null) return -1;
+                    else if (y.LastNameFirstName == null) return 1;
+                    else return x.LastNameFirstName.CompareTo(y.LastNameFirstName);
                 });
             }
         }
@@ -172,6 +181,7 @@ namespace Question6
         public string UserName { get; set; }
         public int Version { get; set; }
         public string CompanyName { get; set; }
+        public string LastNameFirstName { get; set; }
 
         public User(string userID, string userName, int version, string company)
         {
@@ -179,10 +189,19 @@ namespace Question6
             UserName = userName.Trim();
             Version = version;
             CompanyName = company.Trim();
+
+            if (UserName.Contains(' '))
+            {
+                int index = UserName.IndexOf(' ');
+                LastNameFirstName = (UserName.Substring(index) + " " + UserName.Substring(0, index)).Trim();
+            }
+            else
+            {
+                LastNameFirstName = UserName;
+            }
+
+
         }
-
-
-
+        
     }
-
 }
