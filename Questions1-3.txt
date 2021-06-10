@@ -9,7 +9,7 @@ physics degree to accomplish it. That code that I wrote is out in production to 
 derailments and potential deaths for railroads all across North America.
 
 2) I am a huge history nerd, I can not get enough of the subject. I recently came across a documentary about the 
-failed K class of submarines that the Royal Navy built during the  Great War. The reason the K class was doomed
+failed K class of submarines that the Royal Navy built during the Great War. The reason the K class was doomed
 was because the Admiralty was very fixed in its doctrine that held that submarines should operate as part 
 of a combined fleet with the rest of the battleships, destroyers, cruisers, etc. instead of lone wolf tactics 
 that the Germans used. This rigidity forced the engineers to design a submarine that was fast enough to keep up 
