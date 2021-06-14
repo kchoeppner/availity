@@ -21,7 +21,7 @@ namespace Question6
             string path = PromptUser();
 
             //for testing
-            //string path = "D:/code/Availity/Question6/test.txt";
+            //string path = "D:/code/Availity/Question6/test.csv";
 
             //reads the file and creates a list of companies that holds its users
             List<Company> companyList = ReadFile(path);
