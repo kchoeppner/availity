@@ -5,7 +5,7 @@ import React from 'react';
 
 const initialState = {
   name: '',
-  NPInumber: null,
+  NPInumber: '',
   address: '',
   telephone: '',
   email: '',
