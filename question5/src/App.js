@@ -14,13 +14,6 @@ const initialState = {
 export default class AvailityPage extends React.Component {
   constructor(props) {
     super(props);
-    this.submitData = this.submitData.bind(this);
-    this.handleNameChange = this.handleNameChange.bind(this);
-    this.handleNPIChange = this.handleNPIChange.bind(this);
-    this.handleAddressChange = this.handleAddressChange.bind(this);
-    this.handleTelephoneChange = this.handleTelephoneChange.bind(this);
-    this.handleEmailChange = this.handleEmailChange.bind(this);
-
     this.state = initialState;
   }
   render() {
@@ -32,8 +25,9 @@ export default class AvailityPage extends React.Component {
             <input
               type='text'
               id='nameBox'
+              name='name'
               value={this.state.name}
-              onChange={this.handleNameChange}
+              onChange={this.handleChange}
             ></input>
           </div>
           <div>
@@ -41,8 +35,9 @@ export default class AvailityPage extends React.Component {
             <input
               type='number'
               id='NPIBox'
+              name='NPInumber'
               value={this.state.NPInumber}
-              onChange={this.handleNPIChange}
+              onChange={this.handleChange}
             ></input>
           </div>
           <div>
@@ -50,8 +45,9 @@ export default class AvailityPage extends React.Component {
             <input
               type='text'
               id='addressBox'
+              name='address'
               value={this.state.address}
-              onChange={this.handleAddressChange}
+              onChange={this.handleChange}
             ></input>
           </div>
           <div>
@@ -59,8 +55,9 @@ export default class AvailityPage extends React.Component {
             <input
               type='tel'
               id='telephoneBox'
+              name='telephone'
               value={this.state.telephone}
-              onChange={this.handleTelephoneChange}
+              onChange={this.handleChange}
             ></input>
           </div>
           <div>
@@ -68,8 +65,9 @@ export default class AvailityPage extends React.Component {
             <input
               type='email'
               id='emailBox'
+              name='email'
               value={this.state.email}
-              onChange={this.handleEmailChange}
+              onChange={this.handleChange}
             ></input>
           </div>
           <input type='submit' className='submit-button' value='Submit' />
@@ -78,7 +76,7 @@ export default class AvailityPage extends React.Component {
     );
   }
 
-  submitData(event) {
+  submitData = (event) => {
     // create an alert
     const { name, NPInumber, address, telephone, email } = this.state;
     let string = '';
@@ -98,20 +96,8 @@ export default class AvailityPage extends React.Component {
     // clear out the text fields
 
     this.setState(initialState);
-  }
-  handleNameChange(event) {
-    this.setState({ name: event.target.value });
-  }
-  handleNPIChange(event) {
-    this.setState({ NPInumber: event.target.value });
-  }
-  handleAddressChange(event) {
-    this.setState({ address: event.target.value });
-  }
-  handleTelephoneChange(event) {
-    this.setState({ telephone: event.target.value });
-  }
-  handleEmailChange(event) {
-    this.setState({ email: event.target.value });
-  }
+  };
+
+  handleChange = (event) =>
+    this.setState({ [event.target.name]: event.target.value });
 }
